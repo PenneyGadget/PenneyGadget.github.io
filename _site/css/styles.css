@@ -68,7 +68,20 @@ html {
 
 .blog-post {
   border-radius: 5px;
-  width: 70%;
+  width: 80%;
+  display: inline-block;
+  margin: 25px;
+  color: #59484F;
+  background-color: white;
+  padding: 10px;
+  font-family: "Buda";
+  font-size: 22px;
+  text-align: center;
+}
+
+.crud-blog-post {
+  border-radius: 5px;
+  width: 90%;
   display: inline-block;
   margin: 25px;
   color: #59484F;
