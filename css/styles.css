@@ -30,6 +30,10 @@ html {
   margin-top: 20px;
 }
 
+.table th {
+    text-align:center;
+}
+
 #blog-snippet-title {
   font-size: 40px;
   font-variant: small-caps;
