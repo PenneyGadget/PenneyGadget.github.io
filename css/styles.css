@@ -23,6 +23,12 @@ html {
   font-family: "Amatic SC", monospace;
 }
 
+.center-table
+{
+  margin: 0 auto !important;
+  float: none !important;
+}
+
 #blog-snippet-title {
   font-size: 40px;
   font-variant: small-caps;
