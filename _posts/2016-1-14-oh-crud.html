@@ -14,7 +14,78 @@ date: 2016-1-14
     functions of persistant storage. CRUD provides everything we need to manage the flow of data through
     and within a database. Differest users interacting with a database may have different CRUD cycles
     based on their authorizations - for example, a regular user may not be able to delete or update
-    anything on a website, whereas an admin can.<br>
+    anything on a website, whereas an administrator would.<br>
     So what does this look like in practice?<br>
+    Well to illustrate how CRUD works in practice it will first be helpful to explain what HTTP verbs are.
+    HTTP stands for Hypertext Transfer Protocol - it is the protocol to exchange or transfer hypertext on
+    the web. HTTP functions as a request/response cycle between a client and server. The client (for example,
+    a web browser) initiates a request to the server, which in turn processes that request and sends a response
+    back. Within the information that gets passed along with the initial request is a verb which indicates the
+    desired action to be performed. The main HTTP verbs are GET, POST, PUT or PATCH, and DELETE. Roughly simplified
+    they mean:<br>
+    <ul>
+      <li>GET: retrieves whatever information is in the request</li>
+      <li>POST: accepts and stores the data enclosed in the request</li>
+      <li>PUT/PATCH: updates information</li>
+      <li>DELETE: the name says it all ;-)</li>
+    </ul>
+    So now back to the CRUD! Using HTTP verbs we can work through the Create, Read, Update, and Delete cycle.
+    Let's pretend we have a website for records (as in vinyl records that play music). Our verbs and CRUD give
+    us 7 combinations:
+    <table>
+      <thead>
+        <tr>
+          <th>HTTP Verb/Method</th>
+          <th>URL/Action</th>
+          <th>Part of CRUD</th>
+          <th>Gives us:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GET</td>
+          <td>"/records"</td>
+          <td>READ</td>
+          <td>Here we can see all of our records</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>"/records/:id"</td>
+          <td>READ</td>
+          <td>Here we see an individual record</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>"/records/new"</td>
+          <td>CREATE (part 1)</td>
+          <td>We get a form to put in information for a new record</td>
+        </tr>
+        <tr>
+          <td>POST</td>
+          <td>"/records"</td>
+          <td>CREATE (part 2)</td>
+          <td>That new record gets created</td>
+        </tr>
+        <tr>
+          <td>GET</td>
+          <td>"/records/:id/edit"</td>
+          <td>UPDATE (part 1)</td>
+          <td>A form to edit a record</td>
+        </tr>
+        <tr>
+          <td>PUT/PATCH</td>
+          <td>"/records/:id"</td>
+          <td>UPDATE (part 2)</td>
+          <td>That record is updated</td>
+        </tr>
+        <tr>
+          <td>DELETE</td>
+          <td>"/records/:id"</td>
+          <td>DELETE</td>
+          <td>A record is deleted</td>
+        </tr>
+      </tbody>
+    </table>
+    And that's it! You now know the basic framework for most websites. And I got a good review of it ;-)
   </p>
 </div>
