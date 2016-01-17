@@ -27,6 +27,7 @@ html {
 {
   margin: 0 auto !important;
   float: none !important;
+  margin-top: 20px;
 }
 
 #blog-snippet-title {
