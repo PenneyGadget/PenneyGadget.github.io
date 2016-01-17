@@ -30,8 +30,8 @@ html {
   margin-top: 20px;
 }
 
-.table th {
-    text-align:center;
+.table-text-center th {
+    text-align: center;
 }
 
 #blog-snippet-title {
