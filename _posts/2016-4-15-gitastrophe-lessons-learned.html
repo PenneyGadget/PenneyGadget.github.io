@@ -1,0 +1,107 @@
+---
+title: Gitastrophe Lessons Learned
+layout: post
+date: 2016-4-15
+---
+<div class="blog-post">
+  <p>
+    Sometimes in life when we don't pay attention and get a bit too cocky or
+    lackadaisical, the universe comes along and takes us down a peg or two. Or
+    three. It's easy to think that this is happening to you simply because
+    you're new at something or because you're a terrible person (ha ha), but the
+    reality is that these kinds of things happen to everyone.
+  </p>
+  <p>
+    I recently managed to delete the entire codebase for a group project off of
+    Github. I almost puked all over myself when I realized what I had done. Yes
+    I'm still at student and still very new at web development, but I'm also in
+    the fourth and final module at <a href="http://turing.io/">Turing School of Software and Design</a>,
+    a very rigorous and thorough program. I am about to graduate because I have,
+    supposedly, proven that I have the skills to be a professional developer out
+    in the real world. This would suggest that I am capable of working on a team
+    with other developers without deleting the main repository. You would think.
+  </p>
+  <p>
+    So how did this happen? Well I had been working on a feature on my own branch
+    and it wasn't panning out. Things were buggy and weird. I asked a teacher for
+    some help and he confirmed the thought that was developing in my head - that
+    because I hadn't written very much code and had forked the repo instead of
+    cloning it (making for slightly more inconvenient merges later on down the road), that
+    I should just delete the work I'd done, clone the repo fresh, and start over.
+    Simple enough. I asked if I could just delete a fork off the main repo the
+    same as deleting any repo, and he said yes. We then did that thing where one
+    person is like "You do this" and the other person is like "Yeah, yeah, that's
+    what I thought, cool, I got this" and the two of us quickly navigated through
+    the red warning box that says something like "THIS ACTION IS PERMANENT"
+    all scary-like and pops up when you're deleting a repo on Github,
+    not paying attention to the fine print in the slightest.
+    We called it good and I thanked him as he went off to help another student.
+    I then went back to clone the main repository only to find that it didn't
+    exist. I clicked around like a crazy person for awhile as my heart rate started
+    to skyrocket and finally grabbed my computer and literally sprinted across the
+    school to find the teacher that had been helping me. He was with another
+    student and, trying not to interrupt them, I instead stood awkwardly next to
+    them doing a frantic dance not unlike the "I gotta pee NOW" dance.
+  </p>
+  <p>
+    He quickly came over to try to calm me down and help, surprised that there
+    had been a way at all for me to delete the main repo and tried to take responsibility
+    for the situation saying "I told you to do it". I told him that was ridiculous, that I am
+    supposed to be a responsible developer at this point in time and was just as
+    much to blame, if not moreso. The two of us messaged my primary teacher in charge
+    of the project a half a dozen times, and I decided to not touch my computer
+    for awhile and bike home so I could cry in peace.
+  </p>
+  <p>
+    The End.
+  </p>
+  <p>
+    Just kidding! So what happened next you ask? Well my primary teacher got back
+    to me quickly and very kindly assured me that all would be okay. She sent an
+    email to Github support and told me that because everyone on the team had
+    local copies of the code base on their machines, that we would be able to restore
+    the project in one way or another and everyone could keep working in the meantime.
+    Github support got back to her in a matter of hours and restored the repo
+    completely, even things specific to Github like comments and issues.
+  </p><br>
+  <p>
+    Here are the main takeaways from this debacle:
+  </p>
+  <ol>
+    <li>
+      It is very important when you are put on a project to have a clear
+      understanding of what security permissions you've been granted. The reason
+      that I was able to delete the main repository is because I had been given
+      administrative priviledges (priviledges that we then revoked for a time
+      being mind you!)
+    </li><br>
+    <li>
+      Read the damn fine print. Just do it, even if you think you don't have to
+      because you're doing something you've done before.
+      If you're carrying out an action with potentially large consequences (like deleting
+      a repo!), <u>read that short scary message before you click "ok"</u> especially
+      if there are other people besides yourself on a project. If I had noticed
+      that one line of text that clearly stated that I was deleting the main
+      repository and not my fork, all of this would have been prevented.
+    </li><br>
+    <li>
+      Just because someone with more experience is helping you, don't assume that
+      you can check out mentally when dealing with sensitive issues - they are
+      human just like you and make mistakes just like you. Yes, they may have a
+      better eye for certain things, but it's still your responsibility to keep
+      alert and be their second set of eyes when doing something with large
+      consequences. What happened in this scenario is that I was thinking "Oh we're
+      good, he knows what he's doing" and he was thinking the same thing about me -
+      so neither of us caught the mistake until it was too late.
+    </li><br>
+    <li>
+      But, if something like this does happen to you, don't freak out! My teacher
+      shared a story of a past co-worker deleting the entire production database
+      within his first 2 weeks at a job. After he actually DID throw up, they
+      called Heroku and had the entire thing restored. Because these things happen
+      (and happpen a lot!) the support teams at these various places know what to
+      do in case of emergency. Don't let that allow you to be lazy and not pay
+      attention, but do know that everything in software can indeed be restored.
+    </li>
+  </ol>
+</div>
