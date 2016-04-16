@@ -3,9 +3,10 @@ layout: default
 ---
 
 {% for post in site.posts %}
-    <div class="blog-snippet">
-      <h2><a id="blog-snippet-title" href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p id="blog-snippet-teaser">...{{ post.date | date: '%B %d, %Y' }}...<br>{{ post.content | strip_html | truncatewords:10}}</p>
-    </div>
+
+  <div class="blog-snippet">
+    <h2><a id="blog-snippet-title" href="{{ post.url }}">{{ post.title }}</a></h2>
+    <p id="blog-snippet-teaser">...{{ post.date | date: '%B %d, %Y' }}...<br>{{ post.content | strip_html | truncatewords:20}}</p>
+  </div>
 
 {% endfor %}

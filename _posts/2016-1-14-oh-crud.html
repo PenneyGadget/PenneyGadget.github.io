@@ -5,34 +5,54 @@ date: 2016-1-14
 ---
 <div class="crud-blog-post">
   <p>
-    Well if I've learned anything in these months of web development school, it's that this shit is harder
-    than I anticipated. In the interest of helping all these difficult concepts sink in a bit better, I am
-    going to revisit and write about some of them.<br>
-    Today's topic? CRUD!<br>
-    Ewww, what's CRUD? That doesn't sound like something you want anywhere near your computer!<br>
-    CRUD stands for Create, Read (or sometimes Retrieve), Update, and Destroy. These are the four basic
-    functions of persistant storage. CRUD provides everything we need to manage the flow of data through
-    and within a database. Differest users interacting with a database may have different CRUD cycles
-    based on their authorizations - for example, a regular user may not be able to delete or update
-    anything on a website, whereas an administrator would.<br>
-    So what does this look like in practice?<br>
-    Well to illustrate how CRUD works in practice it will first be helpful to explain what HTTP verbs are.
-    HTTP stands for Hypertext Transfer Protocol - it is the protocol to exchange or transfer hypertext on
-    the web. HTTP functions as a request/response cycle between a client and server. The client (for example,
-    a web browser) initiates a request to the server, which in turn processes that request and sends a response
-    back. Within the information that gets passed along with the initial request is a verb which indicates the
-    desired action to be performed. The main HTTP verbs are GET, POST, PUT or PATCH, and DELETE. Roughly simplified
-    they mean:<br>
+    Well if I've learned anything in these months of web development school, it's
+    that this stuff is harder than I anticipated. In the interest of helping all
+    these difficult concepts sink in a bit better, I am going to try to revisit
+    and write about some of them.
+  </p>
+  <p>
+    Today's topic? CRUD!
+  </p>
+  <p>
+    Ewww, what's CRUD? That doesn't sound like something you want anywhere near
+    your computer! CRUD stands for Create, Read (or sometimes Retrieve), Update,
+    and Destroy. These are the four basic functions of persistant storage. CRUD
+    provides everything we need to manage the flow of data through and within a
+    database. Differest users interacting with a database may have different CRUD
+    cycles based on their authorizations - for example, a regular user may not
+    be able to delete or update anything on a website, whereas an administrator
+    would.
+  </p>
+  <p>
+    So what does this look like in practice?
+  </p>
+  <p>
+    Well to illustrate how CRUD works in practice it will first be helpful to
+    explain a bit about what HTTP verbs are. HTTP stands for Hypertext Transfer
+    Protocol - it is the protocol to exchange or transfer hypertext on the web.
+    HTTP functions as a request/response cycle between a client and server.
+    The client (for example, a web browser) initiates a request to the server,
+    which in turn processes that request and sends a response back. Within the
+    information that gets passed along with the initial request is a verb which
+    indicates the desired action to be performed. The main HTTP verbs are GET,
+    POST, PUT or PATCH, and DELETE. Roughly simplified they mean:
+  </p>
+
     <ul>
       <li>GET: retrieves whatever information is in the request</li>
       <li>POST: accepts and stores the data enclosed in the request</li>
       <li>PUT/PATCH: updates information</li>
       <li>DELETE: the name says it all ;-)</li>
     </ul>
-    So now back to the CRUD! Using HTTP verbs we can work through the Create, Read, Update, and Delete cycle.
-    Let's pretend we have a website for records (as in vinyl records that play music). Our verbs and CRUD give
-    us 7 combinations:<br><br>
 
+  <p>
+    So now back to the CRUD! Using HTTP verbs we can work through the Create,
+    Read, Update, and Delete cycle. Let's pretend we have a website for records
+    (as in vinyl records that play music). Our verbs and CRUD give us 7
+    combinations:
+  </p>
+  <br>
+  
     <table class="table-bordered center-table">
       <thead>
         <tr>
@@ -87,6 +107,8 @@ date: 2016-1-14
         </tr>
       </tbody>
     </table><br>
-    And that's it! You now know the basic framework for most websites. And I got a good review of it ;-)
+
+  <p>
+    And that's it! You now know the basic framework for most websites!
   </p>
 </div>

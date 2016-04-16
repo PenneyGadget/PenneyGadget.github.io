@@ -11,25 +11,34 @@ html {
   text-align: center;
   padding: 35px;
   background: url(/images/tweed.png);
+  margin-bottom: 150px;
 }
 
 .blog-snippet {
   margin: 15px auto;
+  margin-bottom: 30px;
   border-style: solid;
   border-radius: 5px;
   color: #59484F;
   background-color: white;
-  width: 400px;
+  width: 800px;
   font-family: "Amatic SC", monospace;
+  padding: 10px;
 }
 
 #blog-snippet-title {
-  font-size: 40px;
+  font-size: 50px;
   font-variant: small-caps;
 }
 
 #blog-snippet-teaser {
   font-size: 24px;
+}
+
+.center-table {
+  margin: 0 auto !important;
+  float: none !important;
+  margin-top: 20px;
 }
 
 .header {
@@ -38,6 +47,7 @@ html {
   text-align: center;
   font-family: "Amatic SC", monospace;
   border-style: solid;
+  margin-top: 100px;
 }
 
 .name {
@@ -73,7 +83,7 @@ html {
   margin: 25px;
   color: #59484F;
   background-color: white;
-  padding: 10px;
+  padding: 30px;
   font-family: "Buda";
   font-size: 22px;
   text-align: center;
@@ -86,14 +96,10 @@ html {
   margin: 25px;
   color: #59484F;
   background-color: white;
-  padding: 10px;
+  padding: 30px;
   font-family: "Buda";
   font-size: 22px;
   text-align: center;
-}
-
-#profile {
-
 }
 
 #profile-pic {
@@ -113,7 +119,7 @@ html {
   margin: 5px;
   color: #59484F;
   background-color: white;
-  padding: 10px;
+  padding: 30px;
   font-family: "Buda";
   font-size: 22px;
   text-align: center;
@@ -129,43 +135,4 @@ html {
   background-color: #D9D5C5;
   padding: 5px;
   font-family: fantasy;
-}
-
-#lies {
-  border-style: solid;
-  color: #59484F;
-  image-orientation: center;
-  width: 50%;
-}
-
-#self-portrait, #squares, #saptan, #soliloquy, #julie-wip, #julie {
-  border-style: solid;
-  color: #59484F;
-  image-orientation: center;
-  width: 50%;
-  margin-top: 20px;
-}
-
-#squash {
-  border-style: solid;
-  color: #59484F;
-  image-orientation: center;
-  width: 400px;
-  margin-top: 20px;
-}
-
-#peas {
-  border-style: solid;
-  color: #59484F;
-  image-orientation: center;
-  width: 250px;
-  margin-top: 20px;
-}
-
-#torso-photo, #legs-photo {
-  border-style: solid;
-  color: #59484F;
-  image-orientation: center;
-  width: 500px;
-  margin-top: 20px;
 }
