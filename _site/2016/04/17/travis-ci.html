@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Buda:300' rel='stylesheet' type='text/css'>
+  <title>...Penney Garrett...</title>
+  <link href="/css/reset.css" rel="stylesheet">
+  <link href="/css/styles.css" rel="stylesheet">
+  <link href="/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+  <div class="header">
+    <h1 class="name">...Penney Garrett...</h1>
+  </div>
+  <div class="navmenu">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/resume.html">Resume</a>
+      <a href="https://github.com/PenneyGadget">Github</a>
+      <a href="http://dream-of-green.com/">Website</a>
+      <a href="https://www.facebook.com/penneyg">Facebook</a>
+      <a href="https://www.instagram.com/penneylicious/">Instagram</a>
+      <a href="https://twitter.com/PenneyGadget">Twitter</a>
+  </div>
+<div class="container-fluid">
+
+
+<h3 class="post-title">Travis CI</h3>
+<div class="blog-post">
+  <p>
+    My project at school this last week was to work with a team on an established
+    Rails application in the same fashion we would if we were working together on the
+    job out in the real world. We had to submit and comment on pull requests as
+    each of us built out a feature, did research,
+    or attempted to chase down a bug. I undertook the task of implementing
+    Travis CI, something I thought was going to be very simple and only take a
+    day, maybe two. In retrospect this whole thing WAS very simple, but figuring
+    out what I needed and how to string it all together the first time was a bit
+    of a headache. So I'm going to lay out the basic steps here in a hopefully
+    more straightforward and helpful manner than what I myself encountered.
+  </p><br>
+  <p>
+    But first, what am I even talking about?
+    Well, the 'CI' in Travis CI stands for <u>continuation integration</u>, a development
+    practice in which each time a pull request is submitted on Github the code is checked
+    against an automated build and tests are run automatically. The idea behind it is
+    that any issues will be caught early on, before a branch is merged into master.
+    My favorite part is that I often forget to run my test suite before pushing
+    up my code, so it's nice to have that check in place.
+  </p><br>
+  <p>
+    The first thing you want to do in order to add Travis CI to your project is
+    <a href="https://travis-ci.com/">sign in</a> to Travis with your Github account.
+    If you then go to your accounts page and click <code>Sync account</code> you
+    should be able to look at all your repositories. There will be a little toggle
+    switch next to each repo - flip the switch on for any repos you want to be
+    able to talk to Travis. You will also have to go to that repository on Github,
+    click <code>Settings</code>, then <code>Webhooks & services</code>, and then
+    <code>Add service</code>. In the dropdown menu, type in <code>Travis CI</code>,
+    select it, then click <code>Add service</code> again  - it's the green
+    button at the bottom of the page.
+  </p><br>
+  <p>
+    The next thing you will need to do is add a <code>.travis.yml</code> file in
+    the root of your application. This file is how we configure Travis CI - it will
+    specify the language of your app, the desired building and testing environment
+    (which includes any dependencies that need to be installed before the aforementioned
+    building and testing can happen), and a whole host of other custom parameters.
+  </p><br>
+  <p>
+    This is the point at which you need to figure out what to put in your
+    <code>.travis.yml</code> file. There are some excellent starter notes
+    <a href="https://docs.travis-ci.com/user/getting-started/">here.</a>
+    This part is very individual and customizable, and I've only personally
+    done it once, so I can't tell you more than what I figured out for this particular
+    project - you'll just need to do a bit of EDD (Error Driven
+    Development in the form of build errors from Travis) to figure out if what
+    you have is working. But I can provide some general guidelines:
+  </p><br>
+  <p>
+    The <code>.travis.yml</code> file can be very simple or quite complex depending on
+    what your needs are. Mine ended up being really simple once I figured it all
+    out - and I think this is probaby the case for most apps
+    You can look at my file <a href="https://github.com/LookingForMe/lookingfor/blob/master/.travis.yml">here</a>.
+    You will need to specify the language of your application and what versions of that
+    language you want Travis to test against.
+    I didn't need to install any dependencies, I just needed to set up the database
+    and provide some basic information about the test environment. Information
+    about setting up your database can be found <a href="https://docs.travis-ci.com/user/database-setup/">here</a>.
+    These are the <code>services</code> and <code>before_script</code> lines in my code
+    example from above. If your project needs to run something other than <code>rake</code>
+    you will need to add instructions in a <code>script</code> section. You will
+    see in my code I added the command to run an RSpec test suite. The last piece
+    I needed in order for my test suite to run properly in Travis was to specify
+    <code>travis_ci_test</code> as the test database in my <code>config/database.yml</code>
+    file <a href="https://github.com/LookingForMe/lookingfor/blob/d667fd66c6b6d3e7afd437c4e790a25b3b3c693b/config/database.yml">here</a>.
+  </p><br>
+  <p>
+    NOTE: If you are using PostgreSQL and you find that your tests are
+    failing locally after integrating Travis, try running <br><code>rake db:test:prepare</code>
+    from the command line. This will prepare your new test database.
+  </p><br>
+  <p>
+    From what I understand those are the bare minimum necessities needed for Travis
+    to do a build. After that there's a ton of custom stuff you can add as you desire
+    You can get build notifications on Slack (the default is for the email associated
+    with the repo to get these) or encrypt sensitive data.
+    Check out the <a href="https://docs.travis-ci.com/">docs</a> if you're interested.
+    I choose to add in the <a href="https://coveralls.io/">Coveralls</a> gem for
+    test coverage. This was just a matter of adding <code>gem 'coveralls', require: false</code>
+    to my Gemfile and <br><code>after_success: coveralls</code> to <code>.travis.yml</code>.
+  </p><br>
+  <p>
+    The last fun thing I added in was status icon badges. These are
+    the little icons that say "build passing" and "coverage 91%" at the
+    <a href="https://github.com/LookingForMe/lookingfor/blob/master/README.md">top of my README.</a>
+    Instructions on how to do this for Travis are <a href="https://docs.travis-ci.com/user/status-images/">here</a>
+    and it works exactly the same way for the Coveralls test coverage badge.
+  </p><br>
+  <p>
+    You also may want to check out the <a href="https://github.com/travis-ci/travis.rb">Travis command line client</a>
+    I'm not sure of the full use of this yet except that it allows you to run
+    a whole bunch of helpful queries from the command line such as <code>travis help</code>
+    (shows you all the commands you can use to gather information) and <code>travis branches</code>
+    (displays the most recent build for each branch). One of my favorites was
+    <code>travis lint</code> which checks your <code>.travis.yml</code> file for
+    any errors. Pretty neat!
+  </p><br>
+  <p>
+    When I set out to add this feature I said something to the effect of "this is
+    the kind of thing that will be really complicated the first time, end up
+    requiring very little code, and then super easy in retrospect" and that's
+    exactly how I feel. The next time I implement Travis it will be a complete
+    breeze, I could do it with my eyes closed. Hopefully this write-up will help
+    your first time be a breeze as well. Happy coding!
+  </p>
+</div>
+
+<br><br><a class="post-title" href="/"><----</a>
+
+    </div>
+  </body>
+</html>
+

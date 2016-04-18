@@ -32,10 +32,10 @@
     that this stuff is harder than I anticipated. In the interest of helping all
     these difficult concepts sink in a bit better, I am going to try to revisit
     and write about some of them.
-  </p>
+  </p><br>
   <p>
     Today's topic? CRUD!
-  </p>
+  </p><br>
   <p>
     Ewww, what's CRUD? That doesn't sound like something you want anywhere near
     your computer! CRUD stands for Create, Read (or sometimes Retrieve), Update,
@@ -45,10 +45,10 @@
     cycles based on their authorizations - for example, a regular user may not
     be able to delete or update anything on a website, whereas an administrator
     would.
-  </p>
+  </p><br>
   <p>
     So what does this look like in practice?
-  </p>
+  </p><br>
   <p>
     Well to illustrate how CRUD works in practice it will first be helpful to
     explain a bit about what HTTP verbs are. HTTP stands for Hypertext Transfer
@@ -59,23 +59,22 @@
     information that gets passed along with the initial request is a verb which
     indicates the desired action to be performed. The main HTTP verbs are GET,
     POST, PUT or PATCH, and DELETE. Roughly simplified they mean:
-  </p>
+  </p><br>
 
     <ul>
       <li>GET: retrieves whatever information is in the request</li>
       <li>POST: accepts and stores the data enclosed in the request</li>
       <li>PUT/PATCH: updates information</li>
       <li>DELETE: the name says it all ;-)</li>
-    </ul>
+    </ul><br>
 
   <p>
     So now back to the CRUD! Using HTTP verbs we can work through the Create,
     Read, Update, and Delete cycle. Let's pretend we have a website for records
     (as in vinyl records that play music). Our verbs and CRUD give us 7
     combinations:
-  </p>
-  <br>
-  
+  </p><br>
+
     <table class="table-bordered center-table">
       <thead>
         <tr>
